@@ -1,6 +1,6 @@
 # test_assignments
 
-A collections of results for homework assigments 
+A collections of results for homework assigments (Python)
 
 2018
 - Cashongo (credit risk, loans)
