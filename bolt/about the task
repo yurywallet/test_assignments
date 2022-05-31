@@ -1,0 +1,19 @@
+
+Important part of our business is a supply/demand balance. 
+We can’t control demand but we can shift some supply to necessary hours to cover more demand during peaks.
+
+As part of the task you will have sample supply and demand data over a few weeks in a single city a few weeks after launch.
+
+We need to understand:
+1)	What is the supply to demand dynamic and whether they match?
+2)	Where are the hours of oversupply? Can we shift some of them to undersupply hours?
+
+Needed output:
+1.	Show which 36 hours in a week are most undersupplied. Show/describe your decision based on sample data.
+2.	24-hour curve of average supply and demand (to illustrate match/mismatch).
+3.	Visualisation of hours where we lack supply during a weekly period. This one we can send to drivers to show when to online for extra hours.
+4.	Estimate number of hours needed to ensure we have a high Coverage Ratio during most peak hours.
+5.	Calculate levels of guaranteed hourly earnings we can offer to drivers during 36 weekly hours with highest demand without losing money + how much extra hours we want to get to capture missed demand.
+  a.	Assume that Finished Rides have an average value of €10 (80% goes to driver, 20% is our revenue).
+  b.	Assume the same level of demand with increased supply, base it on RPH over 3 hour periods, but with increased supply.
+  c.	Assume that with extra hours we will capture “missed coverage” or people attributed to “People saw 0 cars” in demand data.
