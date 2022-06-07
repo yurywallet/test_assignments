@@ -15028,6 +15028,8 @@ Order rows: 209217
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
 
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
 
 <div class="jp-Cell-outputWrapper">
@@ -15241,17 +15243,17 @@ Name: TRIAL_PLAN, dtype: int64
 -----------------------
 -----------------------
 GA_SOURCE --- FROM customers
-No_data                               20884
-google                                13253
-affiliate                             10432
-facebook                              10349
-(direct)                               6149
-                                      ...  
-prnewswire.com                            1
-mercola.com                               1
-coopcommerce-staging.herokuapp.com        1
-optimize.google.com                       1
-evtol.com                                 1
+No_data                                       20884
+google                                        13253
+affiliate                                     10432
+facebook                                      10349
+(direct)                                       6149
+                                              ...  
+google.com                                        1
+command-center.uiprod.west2.steelhouse.com        1
+mail.google.com                                   1
+nortonsafe.search.ask.com                         1
+webmail1.earthlink.net                            1
 Name: GA_SOURCE, Length: 113, dtype: int64
 -----------------------
 -----------------------
@@ -15262,11 +15264,11 @@ cpc                                                                             
 (none)                                                                                                                                                                                               6149
 organic                                                                                                                                                                                              5013
                                                                                                                                                                                                     ...  
-CBS Interactive Inc.                                                                                                                                                                                    1
-c027c8b0caf7dbb921be83d351f229fee7982cf43a26ef983d16febc5e995150c05f9b9d4dc07171262645cd269e7cc306080173557261db3953704b0df940fa6db1988a7a4182d818172d6bdffde48f55c1230509a9097350b56f978d188447        1
-1755f4a6efe5aed04508c55b681c75a1c43cc1b2c9caecea5fe13d8fc7f4c4e0c2b905b2a3c54dc605c3d1a7ded1bba93699c090b823048049778feab1c911b9b636d11012f9f05c5d07fc0645713bb9490786c376f15d4b607201f9d73f3e69        1
 50f8b647728294110055711de745adf16f8778f7c714201d6a87d72729ffeb84bc83436e441c04730d3fdcb9809a296ca17a4aa3be0e3194240dc9c76bf9c95ddc4b79e79de676c493e806137016fbba75b98bf528b26bd3c613872c6c7e9002        1
-82dcdcba65db1437d467a68ad156a025dbb3bdfb60940f42ef3240b7e740d7b1128c52c2c0c2afaae6a909811618d50b8a75ee1ea487ef7f0e3962ffb81490407db2dd7189f4fa854ed0fbe59ae0630c9db3112cba534427c7628d6477013b45        1
+195f1c456b91da45031ea2cd4193d8d3401d3d0db9dc6860a03e4da2738fe0813dd8e8d49145424ab0bc3f2f1ad3bf10a943fa1d4bdaa91a87429cf894126fb3649f99ffaf834b33458ffdabafaa21064e6b0f7386e85bba5dfd2bb359144507        1
+c027c8b0caf7dbb921be83d351f229fee7982cf43a26ef983d16febc5e995150c05f9b9d4dc07171262645cd269e7cc306080173557261db3953704b0df940fa6db1988a7a4182d818172d6bdffde48f55c1230509a9097350b56f978d188447        1
+85140fce5d4edc41722ff37b3792d5c16248e3fdaf0e58a17bf9721de92d80dbcde2a54e7eef905a619f25c968c79edf833dbe150165decb95d516cdbdaee5f7a20608b6e71d46fd6c689a0922409dc91320085e854d6ff3b550506ff0a64839        1
+1c76ed2a6e89eef170de46ebb7c084eac2cbe919fd2c1f0e8409217e68741d676b28f95eac74943a08440dfe27c7567d3dd5e0e21f5b40e614363ba7f0a06aa90bca00b9563b909fa4c10be6fa2a712966217271c931cca84656d7fbf940c754        1
 Name: GA_MEDIUM, Length: 135, dtype: int64
 -----------------------
 -----------------------
@@ -15318,8 +15320,8 @@ Fulfillment Issues                                 71
 Fraud                                              63
 Inventory                                          39
 Bulk cancelation from V2 to V1 migration           25
-Ops Inconsistency                                  18
 Remove Mouser that were gliched                    18
+Ops Inconsistency                                  18
 Foster program                                     16
 Dry Food Price Increase                             9
 Remove Liquid Gold from all subscriptions           8
@@ -15444,94 +15446,6 @@ Name: ORDER_SEQUENCE, dtype: Int64
 </div>
 </div>
 
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>CANCELLATION_REASON</th>
-      <th>NUM_ORDERS</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>29</th>
-      <td>Other</td>
-      <td>6883.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>CWE - Made Effort</td>
-      <td>5109.0</td>
-    </tr>
-    <tr>
-      <th>43</th>
-      <td>Unknown</td>
-      <td>4634.0</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>Max Number of Charge attempts reached</td>
-      <td>3737.0</td>
-    </tr>
-    <tr>
-      <th>31</th>
-      <td>Price</td>
-      <td>3516.0</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>No_data</td>
-      <td>2767.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>CWE - Abandon Trial</td>
-      <td>2742.0</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>My cat won't eat</td>
-      <td>2235.0</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Cats Stopped Eating</td>
-      <td>2226.0</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>Dead/Gone Cat</td>
-      <td>2021.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
 </div>
 
 </div>
@@ -15556,94 +15470,6 @@ Name: ORDER_SEQUENCE, dtype: Int64
 
 </pre>
 </div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>REASON_PLAN</th>
-      <th>NUM_ORDERS</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>70</th>
-      <td>(FRESH)__Other</td>
-      <td>4135.0</td>
-    </tr>
-    <tr>
-      <th>43</th>
-      <td>(FRESH)__CWE - Made Effort</td>
-      <td>2699.0</td>
-    </tr>
-    <tr>
-      <th>83</th>
-      <td>(FRESH)__Unknown</td>
-      <td>2497.0</td>
-    </tr>
-    <tr>
-      <th>116</th>
-      <td>(MIX)__Other</td>
-      <td>2145.0</td>
-    </tr>
-    <tr>
-      <th>89</th>
-      <td>(MIX)__CWE - Made Effort</td>
-      <td>1901.0</td>
-    </tr>
-    <tr>
-      <th>106</th>
-      <td>(MIX)__Max Number of Charge attempts reached</td>
-      <td>1860.0</td>
-    </tr>
-    <tr>
-      <th>118</th>
-      <td>(MIX)__Price</td>
-      <td>1734.0</td>
-    </tr>
-    <tr>
-      <th>130</th>
-      <td>(MIX)__Unknown</td>
-      <td>1707.0</td>
-    </tr>
-    <tr>
-      <th>63</th>
-      <td>(FRESH)__My cat won't eat</td>
-      <td>1701.0</td>
-    </tr>
-    <tr>
-      <th>42</th>
-      <td>(FRESH)__CWE - Abandon Trial</td>
-      <td>1574.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
 </div>
 
 </div>
@@ -15679,7 +15505,7 @@ Problem with payment: fraudster (or card expired)
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
 
 
 
@@ -15775,7 +15601,7 @@ Problem with payment: fraudster (or card expired)
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
 
 
 
@@ -15813,7 +15639,7 @@ Name: cancel_days, Length: 728, dtype: int64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
 
 
 
@@ -15835,6 +15661,8 @@ Name: cancel_days, dtype: float64</pre>
 </div>
 
 </div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
 
@@ -15886,6 +15714,8 @@ Name: prev_order_days, dtype: float64
 
 </div>
 
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
 
 <div class="jp-Cell-outputWrapper">
@@ -15910,7 +15740,7 @@ Name: prev_order_days, dtype: float64
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
 
 
 
@@ -16218,6 +16048,8 @@ jp-needs-light-background
 
 </div>
 
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
 
 <div class="jp-Cell-outputWrapper">
@@ -16230,7 +16062,7 @@ jp-needs-light-background
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[29]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[33]:</div>
 
 
 
@@ -16394,7 +16226,7 @@ jp-needs-light-background
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[32]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[36]:</div>
 
 
 
@@ -16574,7 +16406,7 @@ class="
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[37]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[41]:</div>
 
 
 
@@ -16825,7 +16657,7 @@ top 10 least profitable clients
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[39]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[43]:</div>
 
 
 
@@ -16925,6 +16757,8 @@ top 10 least profitable clients
 
 </div>
 
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
 
 <div class="jp-Cell-outputWrapper">
@@ -16950,7 +16784,7 @@ top 10 most profitable clients
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[40]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[45]:</div>
 
 
 
@@ -17049,6 +16883,8 @@ top 10 most profitable clients
 </div>
 
 </div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
 
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -17191,6 +17027,8 @@ class="
 </div>
 
 </div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
 
