@@ -14707,7 +14707,44 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># hide code</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+
+<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;&lt;script&gt;</span>
+<span class="s1">  function code_toggle() {</span>
+<span class="s1">    if (code_shown){</span>
+<span class="s1">      $(&#39;div.input&#39;).hide(&#39;500&#39;);</span>
+<span class="s1">      $(&#39;#toggleButton&#39;).val(&#39;Show Code&#39;)</span>
+<span class="s1">    } else {</span>
+<span class="s1">      $(&#39;div.input&#39;).show(&#39;500&#39;);</span>
+<span class="s1">      $(&#39;#toggleButton&#39;).val(&#39;Hide Code&#39;)</span>
+<span class="s1">    }</span>
+<span class="s1">    code_shown = !code_shown</span>
+<span class="s1">  }</span>
+
+<span class="s1">  $( document ).ready(function(){</span>
+<span class="s1">    code_shown=false;</span>
+<span class="s1">    $(&#39;div.input&#39;).hide()</span>
+<span class="s1">  });</span>
+<span class="s1">&lt;/script&gt;</span>
+<span class="s1">&lt;form action=&quot;javascript:code_toggle()&quot;&gt;</span>
+<span class="s1">  &lt;input type=&quot;submit&quot; id=&quot;toggleButton&quot; value=&quot;Show Code&quot;&gt;</span>
+<span class="s1">&lt;/form&gt;</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -14764,7 +14801,39 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">path</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;C:\a_job\2022\smalls (cat food)\task&#39;</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">imp</span>
+<span class="n">util</span> <span class="o">=</span> <span class="n">imp</span><span class="o">.</span><span class="n">load_source</span><span class="p">(</span><span class="s1">&#39;date_time&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;C:\a_job\2022\smalls (cat food)\date_time.py&#39;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">date_time</span>
+
+<span class="n">df_o</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{path}</span><span class="s2">\data\Analyst Exercise - FACT_ORDERS.xlsx&quot;</span><span class="p">)</span>
+<span class="n">df_c</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{path}</span><span class="s2">\data\Analyst Exercise - DIM_CUSTOMERS.xlsx&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data contains </span><span class="se">\n</span><span class="s2">Customer rows: </span><span class="si">{df_c.shape[0]}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">Order rows: </span><span class="si">{df_o.shape[0]}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -14791,7 +14860,22 @@ Order rows: 209217
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#sample customers</span>
+<span class="n">df_c</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -14909,7 +14993,22 @@ Order rows: 209217
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#sample orders</span>
+<span class="n">df_o</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -15026,11 +15125,83 @@ Order rows: 209217
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#---</span>
+<span class="n">cid</span><span class="o">=</span><span class="s1">&#39;CUSTOMER_ID&#39;</span>
+<span class="n">oid</span><span class="o">=</span><span class="s1">&#39;ORDER_ID&#39;</span>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+<span class="c1"># ---</span>
+<span class="n">c_cat_features</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;TRIAL_PLAN&#39;</span><span class="p">,</span> <span class="s1">&#39;GA_SOURCE&#39;</span><span class="p">,</span> <span class="s1">&#39;GA_MEDIUM&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;CANCELLATION_FLAG&#39;</span><span class="p">,</span><span class="s1">&#39;CANCELLATION_REASON&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;CAT_COUNT&#39;</span><span class="p">]</span>
+<span class="n">c_date_features</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;TRIAL_WEEK&#39;</span><span class="p">,</span><span class="s1">&#39;CANCELLATION_DATE&#39;</span><span class="p">]</span>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+<span class="c1"># trial week - a date that starts with monday</span>
+
+<span class="c1"># ---</span>
+<span class="n">o_cat_features</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ORDER_TYPE&#39;</span><span class="p">,</span> <span class="s1">&#39;ORDER_SEQUENCE&#39;</span><span class="p">]</span>
+<span class="n">o_date_features</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ORDER_DATE&#39;</span><span class="p">]</span>
+<span class="n">o_date_features</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ORDER_SEQUENCE&#39;</span><span class="p">,</span> <span class="s1">&#39;REVENUE&#39;</span><span class="p">,</span> <span class="s1">&#39;MARGIN&#39;</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create a Pandas Excel writer using XlsxWriter as the engine.</span>
+<span class="n">writer</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">ExcelWriter</span><span class="p">(</span><span class="s1">&#39;smalls_table.xlsx&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">&#39;xlsxwriter&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#check if unique in customers</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_c</span><span class="p">[</span><span class="s1">&#39;CUSTOMER_ID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span><span class="o">==</span><span class="n">df_c</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;no problem&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">tmp</span><span class="o">=</span><span class="n">df_c</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;CUSTOMER_ID&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">tmp</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="s2">&quot;count&quot;</span><span class="p">},</span> <span class="n">inplace</span> <span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
+    <span class="n">duplicate_id</span><span class="o">=</span><span class="n">tmp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tmp</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;CUSTOMER_ID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Duplicates in Customer&quot;</span><span class="p">,</span> <span class="n">duplicate_id</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">df_c</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_c</span><span class="p">[</span><span class="s1">&#39;CUSTOMER_ID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">duplicate_id</span><span class="p">)])</span>
+    <span class="n">df_c</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Duplicat_cust_ID&#39;</span><span class="p">,</span> <span class="n">startrow</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="c1">#Remove duplicates</span>
+    <span class="n">df_c</span><span class="o">=</span><span class="n">df_c</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="p">(</span><span class="n">df_c</span><span class="p">[</span><span class="s1">&#39;CUSTOMER_ID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">duplicate_id</span><span class="p">))]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">df_o</span><span class="o">=</span><span class="n">df_o</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="p">(</span><span class="n">df_o</span><span class="p">[</span><span class="s1">&#39;CUSTOMER_ID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">duplicate_id</span><span class="p">))]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -15062,7 +15233,34 @@ Order rows: 209217
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#check if unique in orders</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_o</span><span class="p">[</span><span class="s1">&#39;ORDER_ID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span><span class="o">==</span><span class="n">df_o</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;no problem&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">tmp</span><span class="o">=</span><span class="n">df_o</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;ORDER_ID&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">tmp</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="s2">&quot;count&quot;</span><span class="p">},</span> <span class="n">inplace</span> <span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
+    <span class="n">duplicate_id</span><span class="o">=</span><span class="n">tmp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tmp</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;ORDER_ID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Duplicates in ORDERS&quot;</span><span class="p">,</span> <span class="n">duplicate_id</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">df_o</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_o</span><span class="p">[</span><span class="s1">&#39;ORDER_ID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">duplicate_id</span><span class="p">)])</span>
+    <span class="n">df_o</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Duplicat_ord_ID&#39;</span><span class="p">,</span> <span class="n">startrow</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    
+    <span class="c1">#Remove duplicates</span>
+    <span class="n">df_o</span><span class="o">=</span><span class="n">df_o</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="p">(</span><span class="n">df_o</span><span class="p">[</span><span class="s1">&#39;ORDER_ID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">duplicate_id</span><span class="p">))]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -15087,9 +15285,52 @@ Order rows: 209217
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># convert dates</span>
+<span class="n">df_o</span><span class="o">=</span><span class="n">date_time</span><span class="o">.</span><span class="n">date_parsing</span><span class="p">(</span><span class="n">df_o</span><span class="p">,</span><span class="s1">&#39;ORDER_DATE&#39;</span><span class="p">)</span>
+<span class="n">df_c</span><span class="o">=</span><span class="n">date_time</span><span class="o">.</span><span class="n">date_parsing</span><span class="p">(</span><span class="n">df_c</span><span class="p">,</span><span class="s1">&#39;TRIAL_WEEK&#39;</span><span class="p">)</span>
+<span class="n">df_c</span><span class="o">=</span><span class="n">date_time</span><span class="o">.</span><span class="n">date_parsing</span><span class="p">(</span><span class="n">df_c</span><span class="p">,</span><span class="s1">&#39;CANCELLATION_DATE&#39;</span><span class="p">)</span>
+<span class="c1"># some columns are int not float</span>
+<span class="n">df_o</span><span class="p">[</span><span class="s1">&#39;ORDER_SEQUENCE&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">df_o</span><span class="p">[</span><span class="s1">&#39;ORDER_SEQUENCE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;Int64&#39;</span><span class="p">)</span>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+<span class="c1">#fillna</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;GA_SOURCE&#39;</span><span class="p">,</span> <span class="s1">&#39;GA_MEDIUM&#39;</span><span class="p">,</span><span class="s1">&#39;CANCELLATION_REASON&#39;</span><span class="p">]:</span>
+    <span class="n">df_c</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;No_data&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tmp</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_o</span><span class="p">,</span><span class="n">df_c</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="n">cid</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">=</span><span class="n">tmp</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;ORDER_SEQUENCE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">())</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;ORDER_SEQUENCE&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">)][[</span><span class="n">cid</span><span class="p">,</span><span class="s1">&#39;ORDER_DATE&#39;</span><span class="p">,</span><span class="s1">&#39;TRIAL_WEEK&#39;</span><span class="p">,</span> <span class="s1">&#39;TRIAL_WEEK_WeekDay&#39;</span><span class="p">]]</span>
+<span class="n">a</span><span class="p">[</span><span class="s1">&#39;valid&#39;</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;ORDER_DATE&#39;</span><span class="p">]</span><span class="o">&gt;=</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;TRIAL_WEEK&#39;</span><span class="p">])</span><span class="o">*</span><span class="mi">1</span>
+
+<span class="n">a</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;valid&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Order_no_Trial&#39;</span><span class="p">,</span> <span class="n">startrow</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1"># orders without Trial?</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Users that made order without Trial {a.loc[a[&#39;valid&#39;]==0].shape[0]}&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -15114,7 +15355,37 @@ Order rows: 209217
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- DATES ----------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Customers: </span><span class="se">\n</span><span class="s2">from {df_c[&#39;TRIAL_WEEK_ymd&#39;].min()} to {df_c[&#39;TRIAL_WEEK_ymd&#39;].max()}&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Orders: from {df_o[&#39;ORDER_DATE_ymd&#39;].min()} to {df_o[&#39;ORDER_DATE_ymd&#39;].max()}&quot;</span><span class="p">)</span>
+
+<span class="c1">#--- Orders before customers first week? ?????? test cases?</span>
+<span class="n">tmp</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_o</span><span class="p">,</span> <span class="n">df_c</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="n">cid</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+
+<span class="c1">#if order appears before trial, but trial can be null</span>
+<span class="n">tmptmp</span><span class="o">=</span><span class="n">tmp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="p">((</span><span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;TRIAL_WEEK_ymd&#39;</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;ORDER_DATE_ymd&#39;</span><span class="p">])</span> <span class="o">|</span> <span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;TRIAL_WEEK&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()))</span> <span class="p">]</span> 
+
+<span class="n">strange_cid</span><span class="o">=</span><span class="n">tmptmp</span><span class="p">[</span><span class="n">cid</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="c1">#to excel</span>
+<span class="n">df_c</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_c</span><span class="p">[</span><span class="n">cid</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">strange_cid</span><span class="p">)]</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Order_before_Trial_C&#39;</span><span class="p">,</span> <span class="n">startrow</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">df_o</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_o</span><span class="p">[</span><span class="n">cid</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">strange_cid</span><span class="p">)]</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Order_before_Trial_O&#39;</span><span class="p">,</span> <span class="n">startrow</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Types of orders with order date before trial week date </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">tmptmp</span><span class="p">[</span><span class="s1">&#39;ORDER_TYPE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -15146,9 +15417,42 @@ Name: ORDER_TYPE, dtype: int64
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># delete strange </span>
+<span class="n">df_c</span><span class="o">=</span><span class="n">df_c</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="n">df_c</span><span class="p">[</span><span class="n">cid</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">strange_cid</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df_o</span><span class="o">=</span><span class="n">df_o</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="n">df_o</span><span class="p">[</span><span class="n">cid</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">strange_cid</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- DATES (after cleaning) ----------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Customers: from {df_c[&#39;TRIAL_WEEK_ymd&#39;].min()} to {df_c[&#39;TRIAL_WEEK_ymd&#39;].max()}&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Orders: from {df_o[&#39;ORDER_DATE_ymd&#39;].min()} to {df_o[&#39;ORDER_DATE_ymd&#39;].max()}&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NB. Data may contain orders of users without trial week&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -15176,7 +15480,35 @@ NB. Data may contain orders of users without trial week
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="n">df_o</span><span class="p">[[</span><span class="n">cid</span><span class="p">,</span><span class="n">oid</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">cid</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="n">customers_orders</span><span class="o">=</span><span class="n">df_o</span><span class="p">[</span><span class="n">cid</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">customers</span><span class="o">=</span><span class="n">df_c</span><span class="p">[</span><span class="n">cid</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">num_cust</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">customers</span><span class="p">)</span>
+
+<span class="n">customers_not_in_df_c</span><span class="o">=</span><span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">customers_orders</span> <span class="k">if</span> <span class="n">c</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">customers</span> <span class="p">]</span>
+
+<span class="c1">#to excel</span>
+<span class="n">df_o</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_o</span><span class="p">[</span><span class="n">cid</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">customers_not_in_df_c</span><span class="p">)]</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Order_no_customer&#39;</span><span class="p">,</span> <span class="n">startrow</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;there are {len(customers_not_in_df_c)} customers in order that we lack data in customer table&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;orders {df_o.loc[df_o[cid].isin(customers_not_in_df_c)].shape[0]}&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;reason can be either with lagging user data or with GA&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -15203,9 +15535,39 @@ reason can be either with lagging user data or with GA
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># use only data from orders with data in customers table</span>
+<span class="n">df_o</span><span class="o">=</span><span class="n">df_o</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_o</span><span class="p">[</span><span class="n">cid</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">customers</span><span class="p">)]</span>
+</pre></div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># sort by date</span>
+<span class="n">df_o</span><span class="o">=</span><span class="n">df_o</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="n">cid</span><span class="p">,</span><span class="n">oid</span><span class="p">,</span><span class="s1">&#39;ORDER_DATE&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -15218,7 +15580,44 @@ reason can be either with lagging user data or with GA
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># cat features</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">c_cat_features</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------------&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="s2">&quot;--- FROM customers&quot;</span><span class="p">)</span>
+    <span class="n">a</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df_c</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="n">c</span><span class="p">,</span><span class="s1">&#39;count&#39;</span><span class="p">]</span>
+    <span class="n">a</span><span class="p">[</span><span class="s1">&#39;share&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">a</span><span class="p">[</span><span class="s1">&#39;cum_share&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;share&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+    <span class="c1">#for i in range(a.shape[0]):</span>
+    <span class="c1">#    a.iloc[i]</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------------&quot;</span><span class="p">)</span>
+
+
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">o_cat_features</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------------&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="s2">&quot;--- FROM orders&quot;</span><span class="p">)</span>
+    <span class="n">a</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df_o</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="n">c</span><span class="p">,</span><span class="s1">&#39;count&#39;</span><span class="p">]</span>
+    <span class="n">a</span><span class="p">[</span><span class="s1">&#39;share&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">a</span><span class="p">[</span><span class="s1">&#39;cum_share&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;share&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------------&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -15236,174 +15635,191 @@ reason can be either with lagging user data or with GA
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>-----------------------
 TRIAL_PLAN --- FROM customers
-FRESH    50016
-MIX      16003
-DRY       1872
-Name: TRIAL_PLAN, dtype: int64
+  TRIAL_PLAN  count     share  cum_share
+0      FRESH  50016  0.736710   0.736710
+1        MIX  16003  0.235716   0.972426
+2        DRY   1872  0.027574   1.000000
 -----------------------
 -----------------------
 GA_SOURCE --- FROM customers
-No_data                                       20884
-google                                        13253
-affiliate                                     10432
-facebook                                      10349
-(direct)                                       6149
-                                              ...  
-google.com                                        1
-command-center.uiprod.west2.steelhouse.com        1
-mail.google.com                                   1
-nortonsafe.search.ask.com                         1
-webmail1.earthlink.net                            1
-Name: GA_SOURCE, Length: 113, dtype: int64
+                         GA_SOURCE  count     share  cum_share
+0                          No_data  20884  0.287746   0.287746
+1                           google  13253  0.182604   0.470349
+2                        affiliate  10432  0.143735   0.614084
+3                         facebook  10349  0.142591   0.756676
+4                         (direct)   6149  0.084723   0.841398
+..                             ...    ...       ...        ...
+108                  app.asana.com      1  0.000014   0.999945
+109                       cnet.com      1  0.000014   0.999959
+110                        msn.com      1  0.000014   0.999972
+111  smallsweb-staging.netlify.app      1  0.000014   0.999986
+112             link.edgepilot.com      1  0.000014   1.000000
+
+[113 rows x 4 columns]
 -----------------------
 -----------------------
 GA_MEDIUM --- FROM customers
-No_data                                                                                                                                                                                             20884
-impact                                                                                                                                                                                              10409
-cpc                                                                                                                                                                                                  9051
-(none)                                                                                                                                                                                               6149
-organic                                                                                                                                                                                              5013
-                                                                                                                                                                                                    ...  
-50f8b647728294110055711de745adf16f8778f7c714201d6a87d72729ffeb84bc83436e441c04730d3fdcb9809a296ca17a4aa3be0e3194240dc9c76bf9c95ddc4b79e79de676c493e806137016fbba75b98bf528b26bd3c613872c6c7e9002        1
-195f1c456b91da45031ea2cd4193d8d3401d3d0db9dc6860a03e4da2738fe0813dd8e8d49145424ab0bc3f2f1ad3bf10a943fa1d4bdaa91a87429cf894126fb3649f99ffaf834b33458ffdabafaa21064e6b0f7386e85bba5dfd2bb359144507        1
-c027c8b0caf7dbb921be83d351f229fee7982cf43a26ef983d16febc5e995150c05f9b9d4dc07171262645cd269e7cc306080173557261db3953704b0df940fa6db1988a7a4182d818172d6bdffde48f55c1230509a9097350b56f978d188447        1
-85140fce5d4edc41722ff37b3792d5c16248e3fdaf0e58a17bf9721de92d80dbcde2a54e7eef905a619f25c968c79edf833dbe150165decb95d516cdbdaee5f7a20608b6e71d46fd6c689a0922409dc91320085e854d6ff3b550506ff0a64839        1
-1c76ed2a6e89eef170de46ebb7c084eac2cbe919fd2c1f0e8409217e68741d676b28f95eac74943a08440dfe27c7567d3dd5e0e21f5b40e614363ba7f0a06aa90bca00b9563b909fa4c10be6fa2a712966217271c931cca84656d7fbf940c754        1
-Name: GA_MEDIUM, Length: 135, dtype: int64
+                                             GA_MEDIUM  count     share  \
+0                                              No_data  20884  0.287746   
+1                                               impact  10409  0.143418   
+2                                                  cpc   9051  0.124707   
+3                                               (none)   6149  0.084723   
+4                                              organic   5013  0.069071   
+..                                                 ...    ...       ...   
+130  82dcdcba65db1437d467a68ad156a025dbb3bdfb60940f...      1  0.000014   
+131                               CBS Interactive Inc.      1  0.000014   
+132  4d47258baa9f2629cbcb8f09453da72e449035e3801860...      1  0.000014   
+133  59435cfb23b86f98269ee8b22ad67cb34044ff13456657...      1  0.000014   
+134                                    couponbirds.com      1  0.000014   
+
+     cum_share  
+0     0.287746  
+1     0.431164  
+2     0.555871  
+3     0.640594  
+4     0.709664  
+..         ...  
+130   0.999945  
+131   0.999959  
+132   0.999972  
+133   0.999986  
+134   1.000000  
+
+[135 rows x 4 columns]
 -----------------------
 -----------------------
 CANCELLATION_FLAG --- FROM customers
-INACTIVE    55067
-ACTIVE      17511
-Name: CANCELLATION_FLAG, dtype: int64
+  CANCELLATION_FLAG  count     share  cum_share
+0          INACTIVE  55067  0.758729   0.758729
+1            ACTIVE  17511  0.241271   1.000000
 -----------------------
 -----------------------
 CANCELLATION_REASON --- FROM customers
-No_data                                         18200
-CWE - Abandon Trial                              7001
-CWE - Made Effort                                6969
-Other                                            4982
-My cat won&#39;t eat                                 4800
-Unknown                                          4415
-Cats won&#39;t eat                                   3974
-Price                                            3742
-Max Number of Charge attempts reached            2513
-Not interested in a subscription                 1618
-Just Wanted Trial/Doesn&#39;t Want Subscription      1360
-Pricing - don&#39;t see value                        1346
-Dead/Gone Cat                                    1217
-Shipping Problems                                1192
-Cats Stopped Eating                              1000
-CWE - Prefer Other Food                           927
-Wants/Needs Prescription                          883
-Still Transitioning                               756
-Cat Had Reaction To Food                          719
-Order A La Carte/As Needed                        645
-Too Difficult                                     495
-My cat stopped eating                             411
-Everything                                        375
-My cat is no longer here                          345
-CWE - Wants Other Flavors/Textures                318
-Wants/Needs Prescription                          291
-There&#39;s too much food                             230
-Website issues                                    228
-Switched to Competitor                            208
-Removed from plan                                 207
-NPC Recall                                        167
-Coronavirus                                       163
-There was an issue with the shipping service      161
-Didn&#39;t have time to transition                    143
-Packaging                                         142
-Ops Inconsistency                                  92
-Cancelled                                          72
-Fulfillment Issues                                 71
-Fraud                                              63
-Inventory                                          39
-Bulk cancelation from V2 to V1 migration           25
-Remove Mouser that were gliched                    18
-Ops Inconsistency                                  18
-Foster program                                     16
-Dry Food Price Increase                             9
-Remove Liquid Gold from all subscriptions           8
-Remove Silica from all subscriptions                3
-influencer cancel                                   1
-Name: CANCELLATION_REASON, dtype: int64
+                             CANCELLATION_REASON  count     share  cum_share
+0                                        No_data  18200  0.250765   0.250765
+1                            CWE - Abandon Trial   7001  0.096462   0.347226
+2                              CWE - Made Effort   6969  0.096021   0.443247
+3                                          Other   4982  0.068643   0.511891
+4                               My cat won&#39;t eat   4800  0.066136   0.578026
+5                                        Unknown   4415  0.060831   0.638858
+6                                 Cats won&#39;t eat   3974  0.054755   0.693612
+7                                          Price   3742  0.051558   0.745171
+8          Max Number of Charge attempts reached   2513  0.034625   0.779796
+9               Not interested in a subscription   1618  0.022293   0.802089
+10   Just Wanted Trial/Doesn&#39;t Want Subscription   1360  0.018738   0.820827
+11                     Pricing - don&#39;t see value   1346  0.018546   0.839373
+12                                 Dead/Gone Cat   1217  0.016768   0.856141
+13                             Shipping Problems   1192  0.016424   0.872565
+14                           Cats Stopped Eating   1000  0.013778   0.886343
+15                       CWE - Prefer Other Food    927  0.012772   0.899115
+16                     Wants/Needs Prescription     883  0.012166   0.911282
+17                           Still Transitioning    756  0.010416   0.921698
+18                      Cat Had Reaction To Food    719  0.009907   0.931605
+19                    Order A La Carte/As Needed    645  0.008887   0.940492
+20                                 Too Difficult    495  0.006820   0.947312
+21                         My cat stopped eating    411  0.005663   0.952975
+22                                    Everything    375  0.005167   0.958142
+23                      My cat is no longer here    345  0.004754   0.962895
+24            CWE - Wants Other Flavors/Textures    318  0.004381   0.967277
+25                      Wants/Needs Prescription    291  0.004009   0.971286
+26                         There&#39;s too much food    230  0.003169   0.974455
+27                                Website issues    228  0.003141   0.977597
+28                        Switched to Competitor    208  0.002866   0.980462
+29                             Removed from plan    207  0.002852   0.983315
+30                                    NPC Recall    167  0.002301   0.985615
+31                                   Coronavirus    163  0.002246   0.987861
+32  There was an issue with the shipping service    161  0.002218   0.990080
+33                Didn&#39;t have time to transition    143  0.001970   0.992050
+34                                     Packaging    142  0.001957   0.994006
+35                            Ops Inconsistency      92  0.001268   0.995274
+36                                     Cancelled     72  0.000992   0.996266
+37                            Fulfillment Issues     71  0.000978   0.997244
+38                                         Fraud     63  0.000868   0.998112
+39                                     Inventory     39  0.000537   0.998650
+40      Bulk cancelation from V2 to V1 migration     25  0.000344   0.998994
+41                             Ops Inconsistency     18  0.000248   0.999242
+42               Remove Mouser that were gliched     18  0.000248   0.999490
+43                                Foster program     16  0.000220   0.999711
+44                       Dry Food Price Increase      9  0.000124   0.999835
+45     Remove Liquid Gold from all subscriptions      8  0.000110   0.999945
+46          Remove Silica from all subscriptions      3  0.000041   0.999986
+47                             influencer cancel      1  0.000014   1.000000
 -----------------------
 -----------------------
 CAT_COUNT --- FROM customers
-1.0     35481
-2.0     22446
-3.0      5712
-4.0      2074
-5.0       736
-6.0       421
-7.0       193
-10.0      160
-8.0       136
-9.0        80
-Name: CAT_COUNT, dtype: int64
+   CAT_COUNT  count     share  cum_share
+0        1.0  35481  0.526120   0.526120
+1        2.0  22446  0.332834   0.858954
+2        3.0   5712  0.084699   0.943653
+3        4.0   2074  0.030754   0.974407
+4        5.0    736  0.010914   0.985320
+5        6.0    421  0.006243   0.991563
+6        7.0    193  0.002862   0.994425
+7       10.0    160  0.002373   0.996797
+8        8.0    136  0.002017   0.998814
+9        9.0     80  0.001186   1.000000
 -----------------------
 -----------------------
 ORDER_TYPE --- FROM orders
-SUBSCRIPTION    116299
-TRIAL            72578
-CANCELLED        12314
-REPLACEMENT       5600
-Name: ORDER_TYPE, dtype: int64
+     ORDER_TYPE   count     share  cum_share
+0  SUBSCRIPTION  116299  0.562399   0.562399
+1         TRIAL   72578  0.350973   0.913371
+2     CANCELLED   12314  0.059548   0.972920
+3   REPLACEMENT    5600  0.027080   1.000000
 -----------------------
 -----------------------
 ORDER_SEQUENCE --- FROM orders
-1     72578
-2     30084
-3     17762
-4     12729
-5      9762
-6      7782
-7      6343
-8      5268
-9      4396
-10     3705
-11     3169
-12     2685
-13     2249
-14     1897
-15     1562
-16     1327
-17     1083
-18      891
-19      729
-20      587
-21      484
-22      392
-23      318
-24      252
-25      200
-26      154
-27      121
-28       84
-29       65
-30       46
-31       33
-32       29
-33       20
-34       17
-35       13
-36       10
-37        9
-38        8
-39        8
-40        5
-41        4
-42        3
-47        2
-48        2
-43        2
-44        2
-45        2
-46        2
-49        1
-50        1
-Name: ORDER_SEQUENCE, dtype: Int64
+    ORDER_SEQUENCE  count     share  cum_share
+0                1  72578  0.384261   0.384261
+1                2  30084  0.159278   0.543539
+2                3  17762  0.094040   0.637579
+3                4  12729  0.067393   0.704972
+4                5   9762  0.051684   0.756656
+5                6   7782  0.041201   0.797858
+6                7   6343  0.033583   0.831441
+7                8   5268  0.027891   0.859332
+8                9   4396  0.023274   0.882606
+9               10   3705  0.019616   0.902222
+10              11   3169  0.016778   0.919000
+11              12   2685  0.014216   0.933216
+12              13   2249  0.011907   0.945123
+13              14   1897  0.010044   0.955167
+14              15   1562  0.008270   0.963437
+15              16   1327  0.007026   0.970462
+16              17   1083  0.005734   0.976196
+17              18    891  0.004717   0.980914
+18              19    729  0.003860   0.984773
+19              20    587  0.003108   0.987881
+20              21    484  0.002563   0.990444
+21              22    392  0.002075   0.992519
+22              23    318  0.001684   0.994203
+23              24    252  0.001334   0.995537
+24              25    200  0.001059   0.996596
+25              26    154  0.000815   0.997411
+26              27    121  0.000641   0.998052
+27              28     84  0.000445   0.998496
+28              29     65  0.000344   0.998841
+29              30     46  0.000244   0.999084
+30              31     33  0.000175   0.999259
+31              32     29  0.000154   0.999412
+32              33     20  0.000106   0.999518
+33              34     17  0.000090   0.999608
+34              35     13  0.000069   0.999677
+35              36     10  0.000053   0.999730
+36              37      9  0.000048   0.999778
+37              38      8  0.000042   0.999820
+38              39      8  0.000042   0.999862
+39              40      5  0.000026   0.999889
+40              41      4  0.000021   0.999910
+41              42      3  0.000016   0.999926
+42              47      2  0.000011   0.999936
+43              48      2  0.000011   0.999947
+44              43      2  0.000011   0.999958
+45              44      2  0.000011   0.999968
+46              45      2  0.000011   0.999979
+47              46      2  0.000011   0.999989
+48              49      1  0.000005   0.999995
+49              50      1  0.000005   1.000000
 -----------------------
 </pre>
 </div>
@@ -15424,7 +15840,37 @@ Name: ORDER_SEQUENCE, dtype: Int64
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_o</span><span class="p">[</span><span class="s1">&#39;MAX_SEQUENCE&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">df_o</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">cid</span><span class="p">)[</span><span class="s1">&#39;ORDER_SEQUENCE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">&#39;max&#39;</span><span class="p">)</span>
+
+<span class="n">df_c</span><span class="p">[</span><span class="s1">&#39;REASON_PLAN&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">df_c</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{x[&#39;TRIAL_PLAN&#39;]}</span><span class="s2">)__</span><span class="si">{x[&#39;CANCELLATION_REASON&#39;]}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># reason vs number of orders</span>
+<span class="n">tmp_cancelled</span><span class="o">=</span><span class="n">df_c</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_c</span><span class="p">[</span><span class="s1">&#39;CANCELLATION_FLAG&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;INACTIVE&#39;</span><span class="p">]</span>
+
+<span class="n">tmp</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">tmp_cancelled</span><span class="p">,</span><span class="n">df_o</span><span class="p">[[</span><span class="n">cid</span><span class="p">,</span><span class="s1">&#39;MAX_SEQUENCE&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(),</span> <span class="n">on</span><span class="o">=</span><span class="n">cid</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;MAX_SEQUENCE&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;MAX_SEQUENCE&#39;</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span> <span class="c1"># remove trial order</span>
+<span class="n">tmp</span><span class="o">=</span><span class="n">tmp</span><span class="p">[[</span><span class="s1">&#39;CANCELLATION_REASON&#39;</span><span class="p">,</span><span class="s1">&#39;MAX_SEQUENCE&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;CANCELLATION_REASON&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">tmp</span><span class="o">=</span><span class="n">tmp</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;MAX_SEQUENCE&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">])</span>
+<span class="n">tmp</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;MAX_SEQUENCE&#39;</span><span class="p">:</span><span class="s1">&#39;NUM_ORDERS&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># tmp.tmp[&#39;MAX_SEQUENCE&#39;].sum()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Top 10 cancellation reasons for users with orders </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> 
+<span class="n">tmp</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+
+<span class="c1">#to excel</span>
+<span class="n">tmp</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Top_Cancel&#39;</span><span class="p">,</span> <span class="n">startrow</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -15450,7 +15896,31 @@ Name: ORDER_SEQUENCE, dtype: Int64
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tmp</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">tmp_cancelled</span><span class="p">,</span><span class="n">df_o</span><span class="p">[[</span><span class="n">cid</span><span class="p">,</span><span class="s1">&#39;MAX_SEQUENCE&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(),</span> <span class="n">on</span><span class="o">=</span><span class="n">cid</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;MAX_SEQUENCE&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;MAX_SEQUENCE&#39;</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span> <span class="c1"># remove trial order</span>
+<span class="n">tmp</span><span class="o">=</span><span class="n">tmp</span><span class="p">[[</span><span class="s1">&#39;REASON_PLAN&#39;</span><span class="p">,</span><span class="s1">&#39;MAX_SEQUENCE&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;REASON_PLAN&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">tmp</span><span class="o">=</span><span class="n">tmp</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;MAX_SEQUENCE&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">])</span>
+<span class="n">tmp</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;MAX_SEQUENCE&#39;</span><span class="p">:</span><span class="s1">&#39;NUM_ORDERS&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># tmp.tmp[&#39;MAX_SEQUENCE&#39;].sum()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Top 10 cancellation Plan &amp; Reasons for users with orders </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> 
+<span class="n">tmp</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+
+<span class="c1">#to excel</span>
+<span class="n">tmp</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Top_Cancel&#39;</span><span class="p">,</span> <span class="n">startrow</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -15476,7 +15946,27 @@ Name: ORDER_SEQUENCE, dtype: Int64
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># time since trial to cancel</span>
+<span class="n">tmp_cancelled</span><span class="o">=</span><span class="n">tmp_cancelled</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">tmp_cancelled</span><span class="p">[</span><span class="s1">&#39;cancel_days&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">tmp_cancelled</span><span class="p">[[</span><span class="s1">&#39;TRIAL_WEEK_date&#39;</span><span class="p">,</span><span class="s1">&#39;CANCELLATION_DATE_date&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">date_time</span><span class="o">.</span><span class="n">dif_dates</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">a</span><span class="o">=</span><span class="n">tmp_cancelled</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tmp_cancelled</span><span class="p">[</span><span class="s1">&#39;cancel_days&#39;</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[[</span><span class="n">cid</span><span class="p">,</span><span class="s1">&#39;TRIAL_WEEK_date&#39;</span><span class="p">,</span><span class="s1">&#39;CANCELLATION_DATE_date&#39;</span><span class="p">,</span><span class="s1">&#39;CANCELLATION_REASON&#39;</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Problem with payment: fraudster (or card expired)&#39;</span><span class="p">)</span>
+<span class="n">df_o</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_o</span><span class="p">[</span><span class="n">cid</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">cid</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()))]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -15575,9 +16065,41 @@ Problem with payment: fraudster (or card expired)
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#remove strange data</span>
+<span class="n">tmp_cancelled</span><span class="o">=</span><span class="n">tmp_cancelled</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="p">(</span><span class="n">tmp_cancelled</span><span class="p">[</span><span class="n">cid</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">cid</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()))]</span>
+<span class="n">df_c</span><span class="o">=</span><span class="n">df_c</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="p">(</span><span class="n">df_c</span><span class="p">[</span><span class="n">cid</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">cid</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()))]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df_o</span><span class="o">=</span><span class="n">df_o</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="p">(</span><span class="n">df_o</span><span class="p">[</span><span class="n">cid</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">cid</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()))]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Time to cancellation (All cancelled)&quot;</span><span class="p">)</span>
+<span class="n">tmp_cancelled</span><span class="p">[</span><span class="s1">&#39;cancel_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -15627,7 +16149,21 @@ Name: cancel_days, Length: 728, dtype: int64</pre>
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tmp_cancelled</span><span class="p">[</span><span class="s1">&#39;cancel_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -15662,9 +16198,70 @@ Name: cancel_days, dtype: float64</pre>
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#to excel</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">tmp_cancelled</span><span class="p">[</span><span class="s1">&#39;cancel_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Cancel_days&#39;</span><span class="p">,</span> <span class="n">startrow</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># order frequency</span>
+<span class="n">tmp</span><span class="o">=</span><span class="n">df_o</span><span class="p">[</span><span class="s1">&#39;ORDER_SEQUENCE&#39;</span><span class="p">]</span>
+<span class="n">df_o</span><span class="o">=</span><span class="n">df_o</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="n">cid</span><span class="p">,</span><span class="s1">&#39;ORDER_SEQUENCE&#39;</span><span class="p">])</span>
+
+<span class="c1"># cancelled and replacement orders need to be analyzed separately</span>
+<span class="c1"># how replacement influence next orders and subscription??? </span>
+<span class="c1"># Orders after replacement</span>
+<span class="c1"># will focus on factual order sequence</span>
+<span class="n">tmp</span><span class="o">=</span><span class="n">df_o</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="p">(</span><span class="n">df_o</span><span class="p">[</span><span class="s1">&#39;ORDER_TYPE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;CANCELLED&#39;</span><span class="p">,</span><span class="s1">&#39;REPLACEMENT&#39;</span><span class="p">]))]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1"># tmp[&#39;last_order&#39;]=tmp.groupby([cid])[&#39;ORDER_DATE_date&#39;].apply(lambda x: x.shift())</span>
+
+<span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;prev_order&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">tmp</span><span class="p">[[</span><span class="n">cid</span><span class="p">,</span><span class="s1">&#39;ORDER_DATE_date&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">cid</span><span class="p">)</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> 
+
+<span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;prev_order_days&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">tmp</span><span class="p">[[</span><span class="s1">&#39;prev_order&#39;</span><span class="p">,</span><span class="s1">&#39;ORDER_DATE_date&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">date_time</span><span class="o">.</span><span class="n">dif_dates</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># check if there are issues </span>
+<span class="n">a</span><span class="o">=</span><span class="n">tmp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;prev_order_days&#39;</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;issue with prev_order_days&quot;</span><span class="p">)</span>
+
+<span class="n">c</span><span class="o">=</span><span class="s1">&#39;prev_order_days&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------------------------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="n">a</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;prev_order_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">a</span><span class="o">.</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="n">c</span><span class="p">,</span><span class="s1">&#39;count&#39;</span><span class="p">]</span>
+<span class="n">a</span><span class="p">[</span><span class="s1">&#39;share&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">a</span><span class="p">[</span><span class="s1">&#39;cum_share&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;share&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------------------------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;prev_order_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -15714,9 +16311,44 @@ Name: prev_order_days, dtype: float64
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#to excel</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;prev_order_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Orders_freq&#39;</span><span class="p">,</span> <span class="n">startrow</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># active clients with orders (after trial)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Current user status&quot;</span><span class="p">)</span>
+<span class="c1">#print(df_c[&#39;CANCELLATION_FLAG&#39;].value_counts())</span>
+<span class="n">tmptmp</span><span class="o">=</span><span class="n">df_c</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;CANCELLATION_FLAG&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">tmptmp</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s2">&quot;number&quot;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">tmptmp</span><span class="p">[</span><span class="s1">&#39;share&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">tmptmp</span><span class="p">[</span><span class="s1">&#39;number&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">tmptmp</span><span class="p">[</span><span class="s1">&#39;number&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">tmptmp</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -15804,7 +16436,26 @@ Name: prev_order_days, dtype: float64
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tmp</span><span class="o">=</span><span class="n">df_o</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_o</span><span class="p">[</span><span class="s1">&#39;ORDER_SEQUENCE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">())</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_o</span><span class="p">[</span><span class="s1">&#39;ORDER_SEQUENCE&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">)][[</span><span class="n">cid</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Current active users with at least one order (not trial)&quot;</span><span class="p">)</span>
+<span class="n">tmp</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_c</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_c</span><span class="p">[</span><span class="s1">&#39;CANCELLATION_FLAG&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;ACTIVE&#39;</span><span class="p">][[</span><span class="n">cid</span><span class="p">]],</span><span class="n">tmp</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="n">cid</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Active users (with subscription) : </span><span class="si">{tmp.shape[0]}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Active users share: {100*tmptmp.loc[tmptmp[&#39;CANCELLATION_FLAG&#39;]==&#39;ACTIVE&#39;][&#39;share&#39;].values[0]:2f} %&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Active users with current subscription share: {100*tmp.shape[0]/tmptmp[&#39;number&#39;].sum():2f} %&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -15833,7 +16484,21 @@ Active users with current subscription share: 14.942750 %
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -15846,7 +16511,58 @@ Active users with current subscription share: 14.942750 %
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># By channel</span>
+<span class="n">tmp</span><span class="o">=</span><span class="n">df_o</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">cid</span><span class="p">])[[</span><span class="s1">&#39;REVENUE&#39;</span><span class="p">,</span> <span class="s1">&#39;MARGIN&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">tmptmp</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_c</span><span class="p">,</span><span class="n">tmp</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="n">cid</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<span class="n">tmptmp</span><span class="p">[</span><span class="s1">&#39;source_medium&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">tmptmp</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{x[&#39;GA_SOURCE&#39;]}</span><span class="s2">_</span><span class="si">{x[&#39;GA_MEDIUM&#39;]}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="n">a</span><span class="o">=</span><span class="n">tmptmp</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;GA_SOURCE&#39;</span><span class="p">)[[</span><span class="s1">&#39;REVENUE&#39;</span><span class="p">,</span> <span class="s1">&#39;MARGIN&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Top 10 BEST sources by Revenue&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;REVENUE&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">])</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="c1">#to excel</span>
+<span class="n">a</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;REVENUE&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">])</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Mark_REVENUE&#39;</span><span class="p">,</span> <span class="n">startrow</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Top 10 WORST sources by Revenue&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;REVENUE&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="kc">True</span><span class="p">])</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="c1">#to excel</span>
+<span class="n">a</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;REVENUE&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="kc">True</span><span class="p">])</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Mark_REVENUE&#39;</span><span class="p">,</span> <span class="n">startrow</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Top 10 BEST sources by MARGIN&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;MARGIN&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">])</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="c1">#to excel</span>
+<span class="n">a</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;MARGIN&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">])</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Mark_REVENUE&#39;</span><span class="p">,</span> <span class="n">startrow</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Top 10 WORST sources by MARGIN&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;MARGIN&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="kc">True</span><span class="p">])</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="c1">#to excel</span>
+<span class="n">a</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;MARGIN&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="kc">True</span><span class="p">])</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Mark_REVENUE&#39;</span><span class="p">,</span> <span class="n">startrow</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<span class="n">a</span><span class="o">=</span><span class="n">tmptmp</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;source_medium&#39;</span><span class="p">)[[</span><span class="s1">&#39;REVENUE&#39;</span><span class="p">,</span> <span class="s1">&#39;MARGIN&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Top 10 BEST sources_media combination by MARGIN&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;MARGIN&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">])</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="c1">#to excel</span>
+<span class="n">a</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;MARGIN&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">])</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Mark_REVENUE&#39;</span><span class="p">,</span> <span class="n">startrow</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Top 10 WORST sources_media combination by MARGIN&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;MARGIN&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="kc">True</span><span class="p">])</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="c1">#to excel</span>
+<span class="n">a</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;MARGIN&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="kc">True</span><span class="p">])</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Mark_REVENUE&#39;</span><span class="p">,</span> <span class="n">startrow</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -15990,7 +16706,34 @@ tapjoy_67df81c117c8ac50efbac800a11811bad811d7cc...    521.00  -123.32
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># understanding sequence</span>
+
+<span class="n">order_trial_num</span><span class="o">=</span><span class="n">df_o</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_o</span><span class="p">[</span><span class="s1">&#39;ORDER_SEQUENCE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">())</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_o</span><span class="p">[</span><span class="s1">&#39;ORDER_SEQUENCE&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">)]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">if</span> <span class="n">order_trial_num</span><span class="o">==</span><span class="nb">len</span><span class="p">(</span><span class="n">customers</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All customers first get sample&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Some customers haven&#39;t got trial sample ({len(customers)-order_trial_num})&quot;</span><span class="p">)</span>
+
+<span class="c1"># number of converted </span>
+<span class="n">converted</span><span class="o">=</span><span class="n">df_o</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_o</span><span class="p">[</span><span class="s1">&#39;ORDER_SEQUENCE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">())</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_o</span><span class="p">[</span><span class="s1">&#39;ORDER_SEQUENCE&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">),</span><span class="n">cid</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">num_conv</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">converted</span><span class="p">)</span>
+<span class="n">not_converted</span><span class="o">=</span><span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">customers</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">converted</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{num_conv}</span><span class="s2"> customers converted after trial ({100*num_conv/num_cust:.2f}%)&quot;</span><span class="p">)</span>  
+     
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -16016,7 +16759,59 @@ tapjoy_67df81c117c8ac50efbac800a11811bad811d7cc...    521.00  -123.32
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tmp</span><span class="o">=</span><span class="n">df_o</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_o</span><span class="p">[</span><span class="s1">&#39;ORDER_TYPE&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;SUBSCRIPTION&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">tmp</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">df_c</span><span class="p">[[</span><span class="n">cid</span><span class="p">,</span> <span class="s1">&#39;TRIAL_WEEK_ym&#39;</span><span class="p">]],</span> <span class="n">on</span><span class="o">=</span><span class="n">cid</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<span class="n">tmptmp</span><span class="o">=</span><span class="n">tmp</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;TRIAL_WEEK_ym&#39;</span><span class="p">,</span><span class="s1">&#39;ORDER_SEQUENCE&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="s1">&#39;size&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">tmptmp</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="s1">&#39;num_orders&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">tmptmp</span><span class="p">[</span><span class="s1">&#39;TRIAL_WEEK_ym_seq&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">tmptmp</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{x[&#39;TRIAL_WEEK_ym&#39;]}</span><span class="s2">_</span><span class="si">{x[&#39;ORDER_SEQUENCE&#39;]}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">m</span><span class="o">=</span><span class="n">tmptmp</span><span class="p">[</span><span class="s1">&#39;TRIAL_WEEK_ym&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">ym</span><span class="o">=</span><span class="n">tmptmp</span><span class="p">[</span><span class="s1">&#39;num_orders&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="n">lm</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">lm</span><span class="o">%</span><span class="k">3</span>==0:
+    <span class="n">r</span><span class="o">=</span><span class="n">lm</span><span class="o">//</span><span class="mi">3</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">r</span><span class="o">=</span><span class="n">lm</span><span class="o">//</span><span class="mi">3</span><span class="o">+</span><span class="mi">1</span>
+    
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">))</span>
+<span class="n">rr</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">cn</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">mm</span><span class="o">=</span><span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;ORDER_SEQUENCE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">m</span><span class="p">:</span>    
+    <span class="n">a</span><span class="o">=</span><span class="n">tmptmp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tmptmp</span><span class="p">[</span><span class="s1">&#39;TRIAL_WEEK_ym&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">rr</span><span class="p">,</span><span class="n">cn</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;ORDER_SEQUENCE&#39;</span><span class="p">],</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;num_orders&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">rr</span><span class="p">,</span><span class="n">cn</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">rr</span><span class="p">,</span><span class="n">cn</span><span class="p">]</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_ticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">mm</span><span class="o">+</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">rr</span><span class="p">,</span><span class="n">cn</span><span class="p">]</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_ticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">250</span><span class="p">))</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">rr</span><span class="p">,</span><span class="n">cn</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;num_clients&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">rr</span><span class="p">,</span><span class="n">cn</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;sequence of orders&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    
+    <span class="n">cn</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="k">if</span> <span class="n">cn</span><span class="o">==</span><span class="mi">3</span><span class="p">:</span>
+        <span class="n">cn</span><span class="o">=</span><span class="mi">0</span>
+        <span class="n">rr</span><span class="o">+=</span><span class="mi">1</span>
+<span class="c1">#plt.xticks(rotation = 90) # Rotates X-Axis Ticks by 45-degrees</span>
+<span class="c1"># plt.legend(loc=&#39;upper center&#39;, bbox_to_anchor=(0.5, -0.05), ncol=10)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Number of orders (sequence) for clients acquired during month &#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.05</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -16048,9 +16843,50 @@ jp-needs-light-background
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_piv</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">tmptmp</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;TRIAL_WEEK_ym&#39;</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ORDER_SEQUENCE&#39;</span><span class="p">],</span><span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;num_orders&#39;</span><span class="p">])</span>
+<span class="n">df_piv</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">df_piv</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df_piv</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Order_sequence&#39;</span><span class="p">,</span> <span class="n">startrow</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># in PCNT</span>
+<span class="n">tmp</span><span class="o">=</span><span class="n">df_o</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_o</span><span class="p">[</span><span class="s1">&#39;ORDER_TYPE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;SUBSCRIPTION&#39;</span><span class="p">,</span><span class="s1">&#39;TRIAL&#39;</span><span class="p">])]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">tmp</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">df_c</span><span class="p">[[</span><span class="n">cid</span><span class="p">,</span> <span class="s1">&#39;TRIAL_WEEK_ym&#39;</span><span class="p">]],</span> <span class="n">on</span><span class="o">=</span><span class="n">cid</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<span class="n">tmptmp</span><span class="o">=</span><span class="n">tmp</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;TRIAL_WEEK_ym&#39;</span><span class="p">,</span><span class="s1">&#39;ORDER_SEQUENCE&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="s1">&#39;size&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">tmptmp</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="s1">&#39;num_orders&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">tmptmp</span><span class="p">[</span><span class="s1">&#39;TRIAL_WEEK_ym_seq&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">tmptmp</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{x[&#39;TRIAL_WEEK_ym&#39;]}</span><span class="s2">_</span><span class="si">{x[&#39;ORDER_SEQUENCE&#39;]}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">tmptmp</span><span class="p">[</span><span class="s1">&#39;num_orders_prev&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">tmptmp</span><span class="p">[[</span><span class="s1">&#39;TRIAL_WEEK_ym&#39;</span><span class="p">,</span><span class="s1">&#39;num_orders&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;TRIAL_WEEK_ym&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;Int64&#39;</span><span class="p">)</span>
+<span class="n">tmptmp</span><span class="p">[</span><span class="s1">&#39;num_orders_prev_change&#39;</span><span class="p">]</span><span class="o">=</span><span class="mi">100</span><span class="o">*</span><span class="n">tmptmp</span><span class="p">[</span><span class="s1">&#39;num_orders&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">tmptmp</span><span class="p">[</span><span class="s1">&#39;num_orders_prev&#39;</span><span class="p">]</span>
+
+<span class="n">tmptmp</span><span class="o">=</span><span class="n">tmptmp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tmptmp</span><span class="p">[</span><span class="s1">&#39;ORDER_SEQUENCE&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">tmptmp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tmptmp</span><span class="p">[</span><span class="s1">&#39;TRIAL_WEEK_ym&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;202001&#39;</span><span class="p">][[</span><span class="s1">&#39;TRIAL_WEEK_ym&#39;</span><span class="p">,</span><span class="s1">&#39;ORDER_SEQUENCE&#39;</span><span class="p">,</span><span class="s1">&#39;num_orders&#39;</span><span class="p">,</span><span class="s1">&#39;num_orders_prev&#39;</span><span class="p">,</span><span class="s1">&#39;num_orders_prev_change&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -16157,7 +16993,42 @@ From the previous table for users acquired from 2020_01 can be observed that the
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">))</span>
+<span class="n">rr</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">cn</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">mm</span><span class="o">=</span><span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;ORDER_SEQUENCE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">m</span><span class="p">:</span>    
+    <span class="n">a</span><span class="o">=</span><span class="n">tmptmp</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">tmptmp</span><span class="p">[</span><span class="s1">&#39;TRIAL_WEEK_ym&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">c</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">rr</span><span class="p">,</span><span class="n">cn</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;ORDER_SEQUENCE&#39;</span><span class="p">],</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;num_orders_prev_change&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">rr</span><span class="p">,</span><span class="n">cn</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">rr</span><span class="p">,</span><span class="n">cn</span><span class="p">]</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_ticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">mm</span><span class="o">+</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">rr</span><span class="p">,</span><span class="n">cn</span><span class="p">]</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_ticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">25</span><span class="p">))</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">rr</span><span class="p">,</span><span class="n">cn</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;retention&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">rr</span><span class="p">,</span><span class="n">cn</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;sequence of orders&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">cn</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="k">if</span> <span class="n">cn</span><span class="o">==</span><span class="mi">3</span><span class="p">:</span>
+        <span class="n">cn</span><span class="o">=</span><span class="mi">0</span>
+        <span class="n">rr</span><span class="o">+=</span><span class="mi">1</span>
+<span class="c1">#plt.xticks(rotation = 90) # Rotates X-Axis Ticks by 45-degrees</span>
+<span class="c1"># plt.legend(loc=&#39;upper center&#39;, bbox_to_anchor=(0.5, -0.05), ncol=10)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Retention for clients acquired during month (percentage)&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.05</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -16189,7 +17060,22 @@ jp-needs-light-background
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="n">tmptmp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tmptmp</span><span class="p">[</span><span class="s1">&#39;ORDER_SEQUENCE&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">2</span><span class="p">][[</span><span class="s1">&#39;num_orders_prev_change&#39;</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Average retention of clients after first order is {a[&#39;num_orders_prev_change&#39;].mean():.2f}% (median: {a[&#39;num_orders_prev_change&#39;].median():.2f}%)&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -16214,7 +17100,21 @@ jp-needs-light-background
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[36]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tmptmp</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -16314,11 +17214,61 @@ jp-needs-light-background
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tmptmp</span><span class="p">[</span><span class="s1">&#39;num_orders_prev_change&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">tmptmp</span><span class="p">[</span><span class="s1">&#39;num_orders_prev_change&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+</pre></div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+     </div>
+</div>
+</div>
+</div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_piv</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">tmptmp</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;TRIAL_WEEK_ym&#39;</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ORDER_SEQUENCE&#39;</span><span class="p">],</span><span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;num_orders_prev_change&#39;</span><span class="p">])</span>
+<span class="n">df_piv</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">df_piv</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df_piv</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Order_sequence_pcnt&#39;</span><span class="p">,</span> <span class="n">startrow</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">30</span><span class="p">))</span> 
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">df_piv</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;YlGnBu&quot;</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=.</span><span class="mi">5</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">cbar_kws</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;shrink&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">},</span> <span class="n">square</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;.0f&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Heatmap. Retention for clients acquired during month (percentage)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -16349,7 +17299,33 @@ class="
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># How good is the convertion rate per cohort</span>
+
+<span class="n">a</span><span class="o">=</span><span class="n">tmptmp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tmptmp</span><span class="p">[</span><span class="s1">&#39;ORDER_SEQUENCE&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">a</span><span class="o">=</span><span class="n">a</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#will remove last month as it seems to be not matured</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;TRIAL_WEEK_ym&#39;</span><span class="p">],</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;num_orders_prev_change&#39;</span><span class="p">])</span>
+<span class="n">t</span><span class="o">=</span><span class="p">[</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;num_orders_prev_change&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()]</span><span class="o">*</span><span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;TRIAL_WEEK_ym&#39;</span><span class="p">],</span><span class="n">t</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span> <span class="o">=</span> <span class="mi">90</span><span class="p">)</span> <span class="c1"># Rotates X-Axis Ticks by degrees</span>
+<span class="c1"># plt.legend()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Convertion rate after Trial per cohort (mean for reference)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; Mean convertion rate {a[&#39;num_orders_prev_change&#39;].mean():.2f} %&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -16392,9 +17368,40 @@ class="
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#performance by month (clients)</span>
+
+<span class="n">tmp</span><span class="o">=</span><span class="n">df_c</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;TRIAL_WEEK_ym&#39;</span><span class="p">])[</span><span class="n">cid</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">tmp</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -16590,7 +17597,26 @@ class="
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[42]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Number of Clients by month (acquisition)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;TRIAL_WEEK_ym&#39;</span><span class="p">],</span><span class="n">tmp</span><span class="p">[</span><span class="n">cid</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Clients&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span> <span class="o">=</span> <span class="mi">90</span><span class="p">)</span> <span class="c1"># Rotates X-Axis Ticks by degrees</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -16632,7 +17658,27 @@ class="
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># What is GMV (revenue) and LTV (margin) per client?</span>
+<span class="n">tmp</span><span class="o">=</span><span class="n">df_o</span><span class="p">[[</span><span class="n">cid</span><span class="p">,</span><span class="s1">&#39;REVENUE&#39;</span><span class="p">,</span> <span class="s1">&#39;MARGIN&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">cid</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">tmp</span><span class="o">=</span><span class="n">tmp</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;MARGIN&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;top 10 least profitable clients&#39;</span><span class="p">)</span>
+<span class="n">tmp</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -16757,9 +17803,39 @@ top 10 least profitable clients
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[44]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tmp</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Profitability&#39;</span><span class="p">,</span> <span class="n">startrow</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[45]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;top 10 most profitable clients&#39;</span><span class="p">)</span>
+<span class="n">tmp</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -16884,7 +17960,21 @@ top 10 most profitable clients
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[46]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tmp</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Profitability&#39;</span><span class="p">,</span> <span class="n">startrow</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -16893,11 +17983,33 @@ top 10 most profitable clients
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="What-share-of-all-clients-have-porisitve-LTV-(margin)?">What share of all clients have porisitve LTV (margin)?<a class="anchor-link" href="#What-share-of-all-clients-have-porisitve-LTV-(margin)?">&#182;</a></h3>
+<h3 id="What-share-of-all-clients-have-positive-LTV-(margin)?">What share of all clients have positive LTV (margin)?<a class="anchor-link" href="#What-share-of-all-clients-have-positive-LTV-(margin)?">&#182;</a></h3>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[47]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#how many clients with positive / negative LTV margin?</span>
+<span class="n">num_pos</span><span class="o">=</span><span class="n">tmp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;MARGIN&#39;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">num_clients</span><span class="o">=</span><span class="n">tmp</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{num_pos}</span><span class="s2"> clients create profit ({100*num_pos/len(customers):.2f} %)&quot;</span><span class="p">)</span>
+
+<span class="c1"># total GMV, total Margin </span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total:</span><span class="se">\n</span><span class="s2">GMV: {tmp[&#39;REVENUE&#39;].sum():.2f} </span><span class="se">\n</span><span class="s2">LVT: {tmp[&#39;MARGIN&#39;].sum():.2f}&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Margin to GMV: {tmp[&#39;MARGIN&#39;].sum()/tmp[&#39;REVENUE&#39;].sum():.2f}&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Per client:</span><span class="se">\n</span><span class="s2">GMV per client: {tmp[&#39;REVENUE&#39;].sum()/num_clients:.2f} </span><span class="se">\n</span><span class="s2">LVT per client: {tmp[&#39;MARGIN&#39;].sum()/num_clients:.2f}&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -16914,9 +18026,13 @@ top 10 most profitable clients
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>26479 clients create profit (36.48 %)
-total
+Total:
 GMV: 18501775.32 
 LVT: 3284294.13
+Margin to GMV: 0.18
+Per client:
+GMV per client: 254.93 
+LVT per client: 45.25
 </pre>
 </div>
 </div>
@@ -16925,9 +18041,40 @@ LVT: 3284294.13
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[48]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#total profit to total loss</span>
+</pre></div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[49]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># what is result for those only on trial</span>
+<span class="n">tmptmp</span><span class="o">=</span><span class="n">tmp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tmp</span><span class="p">[</span><span class="n">cid</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">not_converted</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total  (have only Trial) ~ cost of Trials </span><span class="se">\n</span><span class="s2">GMV: {tmptmp[&#39;REVENUE&#39;].sum():.2f} </span><span class="se">\n</span><span class="s2">LVT: {tmptmp[&#39;MARGIN&#39;].sum():.2f}&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Margin to GMV: {tmptmp[&#39;MARGIN&#39;].sum()/tmptmp[&#39;REVENUE&#39;].sum():.2f}&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -16946,6 +18093,7 @@ LVT: 3284294.13
 <pre>Total  (have only Trial) ~ cost of Trials 
 GMV: 2520479.70 
 LVT: -1032105.57
+Margin to GMV: -0.41
 </pre>
 </div>
 </div>
@@ -16954,7 +18102,38 @@ LVT: -1032105.57
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[50]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#orders by month, week</span>
+<span class="n">tmp</span><span class="o">=</span><span class="n">df_o</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_o</span><span class="p">[</span><span class="s1">&#39;ORDER_TYPE&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;SUBSCRIPTION&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">tmptmp</span><span class="o">=</span><span class="n">tmp</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;ORDER_DATE_ym&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="s1">&#39;size&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">tmptmp</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="s1">&#39;num_orders&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">tmp</span><span class="o">=</span><span class="n">df_o</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_o</span><span class="p">[</span><span class="s1">&#39;ORDER_TYPE&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;TRIAL&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">tmptmp2</span><span class="o">=</span><span class="n">tmp</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;ORDER_DATE_ym&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="s1">&#39;size&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">tmptmp2</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="s1">&#39;num_trials&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Number of orders by month&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tmptmp</span><span class="p">[</span><span class="s1">&#39;ORDER_DATE_ym&#39;</span><span class="p">],</span><span class="n">tmptmp</span><span class="p">[</span><span class="s1">&#39;num_orders&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Orders&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tmptmp2</span><span class="p">[</span><span class="s1">&#39;ORDER_DATE_ym&#39;</span><span class="p">],</span><span class="n">tmptmp2</span><span class="p">[</span><span class="s1">&#39;num_trials&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Trials&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span> <span class="o">=</span> <span class="mi">90</span><span class="p">)</span> <span class="c1"># Rotates X-Axis Ticks by degrees</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There can be lag between 1) marketing campaigns 2) trials (result of campaigns) and 3) next order (subscription after trial)&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -16997,7 +18176,33 @@ class="
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[51]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tmp</span><span class="o">=</span><span class="n">df_o</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_o</span><span class="p">[</span><span class="s1">&#39;ORDER_TYPE&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;SUBSCRIPTION&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">tmptmp</span><span class="o">=</span><span class="n">tmp</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;ORDER_DATE_ym&#39;</span><span class="p">])[[</span><span class="s1">&#39;REVENUE&#39;</span><span class="p">,</span><span class="s1">&#39;MARGIN&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1">#will remove last month as it is not complete</span>
+<span class="n">tmptmp</span><span class="o">=</span><span class="n">tmptmp</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Financial results by month&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tmptmp</span><span class="p">[</span><span class="s1">&#39;ORDER_DATE_ym&#39;</span><span class="p">],</span><span class="n">tmptmp</span><span class="p">[</span><span class="s1">&#39;MARGIN&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Margin&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tmptmp</span><span class="p">[</span><span class="s1">&#39;ORDER_DATE_ym&#39;</span><span class="p">],</span><span class="n">tmptmp</span><span class="p">[</span><span class="s1">&#39;REVENUE&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Reveue&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span> <span class="o">=</span> <span class="mi">90</span><span class="p">)</span> <span class="c1"># Rotates X-Axis Ticks by degrees</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -17028,9 +18233,22 @@ class="
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[52]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Close EXCEL</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</pre></div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+     </div>
+</div>
+</div>
+</div>
 
 </div>
 </body>
