@@ -20,7 +20,7 @@ A collections of results for homework assigments
 
 ## 2022
 - Smalls (Cat food) 
-  - Task: User segmentation
+  - Task: User segmentation, retention
 
 # SQL portfolio
 Available at CodeWars: https://www.codewars.com/users/yurywallet/completed_solutions
