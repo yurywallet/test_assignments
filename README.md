@@ -3,21 +3,24 @@
 A collections of results for homework assigments
 
 ## 2018
-- CashoOnGo (credit risk, loans)
+- CashOnGo (Finance. Loans provider)
+ - Task: credit risk assessment
  
 ## 2019
-- IPF Digital (credit risk, loans). 
+- IPF Digital (Finance. Loans provider)
+ - Task: credit risk assessment 
  
 ## 2020
-- Brainbase. Task: automate PDF contracts analysis
-- TransferWise. Task: assess customer risk, network analysis
+- Brainbase (Brand licensing management) 
+-  Task: automate PDF contracts analysis
+- TransferWise (Finance)
+ - Task: assess customer risk, network analysis
 - Bolt (Ridehailing)
   - Task: Drivers' supply/demand analysis
 
 ## 2022
-- Smalls (cat food). Task: User segmentation
-
-
+- Smalls (Cat food) 
+ - Task: User segmentation
 
 # SQL portfolio
 Available at CodeWars: https://www.codewars.com/users/yurywallet/completed_solutions
