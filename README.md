@@ -32,4 +32,4 @@ A collections of results for homework assigments
   - Task: User segmentation, retention
 
 # SQL portfolio
-Available at CodeWars: https://www.codewars.com/users/yurywallet/completed_solutions
+- [CodeWars](https://www.codewars.com/users/yurywallet/completed_solutions)
