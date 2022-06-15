@@ -11,7 +11,7 @@ A collections of results for homework assigments
 - IPF Digital (Finance. Loans provider)
   - Position: Data Scientist
   - Task: credit risk assessment 
- - Kühne Nagel
+- Kühne Nagel
   - Position: Machine Learning Engineer
   - Task: Build a text classification service
  
