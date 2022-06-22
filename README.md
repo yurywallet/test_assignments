@@ -34,6 +34,7 @@ A collections of results for homework assigments
 # SQL portfolio
 - [CodeWars](https://www.codewars.com/users/yurywallet/completed_solutions)
 - [HackerRank](https://www.hackerrank.com/yurywallet)
+- [LeetCode](https://leetcode.com/yury_wallet/)
 
 
 ## Stack
