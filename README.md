@@ -38,4 +38,4 @@ A collections of results for homework assigments
 
 ## Python
 - [Medium articles](https://medium.com/@yurywallet)
-- [stackoverflow](https://stackoverflow.com/users/9043549/yury-wallet)
+- [StackOverflow](https://stackoverflow.com/users/9043549/yury-wallet)
