@@ -23,6 +23,9 @@ A collections of results for homework assigments
   - Position: Product Analyst
   - [Task: assess customer risk, network analysis](https://github.com/yurywallet/test_assignments/tree/main/2019_transferwise_wise)
 - Bolt (Ridehailing)
+  - Position: Business Analyst. Support
+  - [Task: Drivers' supply/demand analysis](https://github.com/yurywallet/test_assignments/tree/main/bolt)
+- Bolt (Ridehailing)
   - Position: Data Analyst
   - [Task: Drivers' supply/demand analysis](https://github.com/yurywallet/test_assignments/tree/main/bolt)
 
