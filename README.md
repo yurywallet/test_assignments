@@ -36,6 +36,6 @@ A collections of results for homework assigments
 - [HackerRank](https://www.hackerrank.com/yurywallet)
 - [LeetCode](https://leetcode.com/yury_wallet/)
 
-
-## Stack
+## Python
+- [Medium articles](https://medium.com/@yurywallet)
 - [stackoverflow](https://stackoverflow.com/users/9043549/yury-wallet)
