@@ -39,3 +39,6 @@ A collections of results for homework assigments
 ## Python
 - [Medium articles](https://medium.com/@yurywallet)
 - [StackOverflow](https://stackoverflow.com/users/9043549/yury-wallet)
+
+## Competitions
+- [ML competitions](https://github.com/yurywallet/ml_competition)
