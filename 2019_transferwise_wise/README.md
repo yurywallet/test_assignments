@@ -3,8 +3,10 @@ Transactional data
 
 ## Questions to answer:
 1. Looking at the data, which customers would you deem risky based on their behaviour?
+
   a) Try to show through data and clear visualization strange behaviour that you think
   is worth further monitoring.
+  
   b) Based on that data, what kind of limits/restrictions would you set to catch any
   potential bad customers before they manage to do any harm? Show how our customers would
   be impacted by these limits and hypothesize the likely behaviour models that would emerge from
