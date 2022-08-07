@@ -2,6 +2,8 @@
 - Senior Marketing Analyst
 
 # Task
+- User segmentation, retention
+- []()
 
 # Data
 
