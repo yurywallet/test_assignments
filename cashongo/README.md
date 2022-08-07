@@ -1,5 +1,6 @@
 
 # Position
+- Data Scientist
 
 # Task
 Attached file (Credit_offer.csv) contains information on received loan applications and credit offers made to the customer. 
