@@ -1,6 +1,6 @@
 
 # Position
-- Senior Marketing Analyst
+- Product Analyst
 
 # Task
 
