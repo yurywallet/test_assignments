@@ -14,4 +14,5 @@
 
 # Results
 - SQLlite database creation: [Notebook](https://github.com/yurywallet/test_assignments/blob/main/smalls/smalls_sql_example.ipynb)
+- LTV prediction ideas: [Doc](https://github.com/yurywallet/test_assignments/blob/main/smalls/LTV%20prediction.pdf)
 - conclusion: [Report](https://github.com/yurywallet/test_assignments/blob/main/smalls/task_smalls.ipynb)
