@@ -3,6 +3,7 @@
 - Product Analyst
 
 # Task
+- [Description](https://github.com/yurywallet/test_assignments/blob/main/2019_transferwise_wise/EDD%20Homework.pdf)
 
 # Data: 
 Transactional data
