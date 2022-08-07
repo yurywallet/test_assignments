@@ -11,5 +11,7 @@ Please, present your main findings as if your target audience was marketing team
 
 
 # Results
+- [EDA]()
+- [Model](https://github.com/yurywallet/test_assignments/blob/main/cashongo/model.py)
 - [report](https://github.com/yurywallet/test_assignments/blob/main/cashongo/report_eda.pdf)
-- [next steps](https://github.com/yurywallet/test_assignments/blob/main/cashongo/Next%20step.pdf)
+- [Next steps](https://github.com/yurywallet/test_assignments/blob/main/cashongo/Next%20step.pdf)
