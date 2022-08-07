@@ -8,6 +8,10 @@
 
 # Questions
 
+- What major customer segments do you see? How are these segments different?
+- Which segments are most valuable?
+- What recommendations for segment-based initiatives do you have based on your analysis?
+- What data do you wish you had received to make a more informed recommendation?
 
 # Results
 
