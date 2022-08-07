@@ -1,5 +1,5 @@
 # Position
-- Hired as Data Scientist
+- Hired as Data Scientist in Credit risk
 
 # Task
 - Classification goals. The goal is to predict Bad clients (target=1) based on application information provided. The task is a binary classification problem. 
