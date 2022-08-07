@@ -14,7 +14,8 @@ of the data on the PDF and point the user to it.
 
 # Results
 
-- code: [Python](https://github.com/yurywallet/test_assignments/blob/main/Bolt_(BA%2Csupport)/orders_tickets_bolt.py)
+- code: [Python](https://github.com/yurywallet/test_assignments/blob/main/brainbase/regular_contracts.py)
 - conclusion: [report](https://github.com/yurywallet/test_assignments/blob/main/brainbase/regular_contracts.pdf)
+- Publication: [Medium article](https://medium.com/@yurywallet/python-named-entity-recognition-ner-for-data-extraction-d604e25d7d9e)
 
 
