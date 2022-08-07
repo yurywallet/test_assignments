@@ -23,5 +23,5 @@ Transactional data
 our service to them or deny it? How would you go about getting this info?
 
 # Results
-- code: [Notebook]()
+- code: [Python](https://github.com/yurywallet/test_assignments/blob/main/2019_transferwise_wise/edd.py)
 - conclusion: [Report](https://github.com/yurywallet/test_assignments/blob/main/2019_transferwise_wise/report_final.pdf)
