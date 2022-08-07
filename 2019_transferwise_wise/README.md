@@ -23,6 +23,5 @@ Transactional data
 our service to them or deny it? How would you go about getting this info?
 
 # Results
-- SQLlite database creation: [Notebook](https://github.com/yurywallet/test_assignments/blob/main/smalls/smalls_sql_example.ipynb)
-- LTV prediction ideas: [Doc](https://github.com/yurywallet/test_assignments/blob/main/smalls/LTV%20prediction.pdf)
-- conclusion: [Report](https://github.com/yurywallet/test_assignments/blob/main/smalls/task_smalls.ipynb)
+- code: [Notebook]()
+- conclusion: [Report](https://github.com/yurywallet/test_assignments/blob/main/2019_transferwise_wise/report_final.pdf)
