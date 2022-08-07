@@ -3,7 +3,7 @@
 
 # Task
 - User segmentation, retention
-- []()
+- [description](https://smalls.notion.site/Marketing-Analyst-Technical-Challenge-Discussion-65e5d85a71224e2fb9d406f4e772ba37)
 
 # Data
 
