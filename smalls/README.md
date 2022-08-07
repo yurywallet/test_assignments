@@ -13,5 +13,5 @@
 - What data do you wish you had received to make a more informed recommendation?
 
 # Results
-
+- SQLlite database creation: [Notebook](https://github.com/yurywallet/test_assignments/blob/main/smalls/smalls_sql_example.ipynb)
 - conclusion: [Report](https://github.com/yurywallet/test_assignments/blob/main/smalls/task_smalls.ipynb)
