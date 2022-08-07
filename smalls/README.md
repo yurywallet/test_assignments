@@ -2,9 +2,8 @@
 - Senior Marketing Analyst
 
 # Task
-- [Task description]()
-# Data
 
+# Data
 
 # Questions
 
@@ -15,5 +14,4 @@
 
 # Results
 
-- code: [Python]()
-- conclusion: [Report]()
+- conclusion: [Report](https://github.com/yurywallet/test_assignments/blob/main/smalls/task_smalls.ipynb)
