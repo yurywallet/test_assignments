@@ -5,7 +5,7 @@
 # Task
 - [Description](https://github.com/yurywallet/test_assignments/blob/main/2020_wise_transferwise/EDD%20Homework.pdf)
 
-# Data: 
+# Data
 Transactional data
 
 # Questions to answer:
@@ -23,5 +23,5 @@ Transactional data
 our service to them or deny it? How would you go about getting this info?
 
 # Results
-- code: [Python](https://github.com/yurywallet/test_assignments/blob/main/2020_wise_transferwise/edd.py)
-- conclusion: [Report](https://github.com/yurywallet/test_assignments/blob/main/2020_wise_transferwise/report_final.pdf)
+- Code: [Python](https://github.com/yurywallet/test_assignments/blob/main/2020_wise_transferwise/edd.py)
+- Conclusion: [Report](https://github.com/yurywallet/test_assignments/blob/main/2020_wise_transferwise/report_final.pdf)
