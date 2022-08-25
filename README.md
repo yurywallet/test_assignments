@@ -10,7 +10,7 @@ A collections of results for homework assigments
 ## 2019
 - IPF Digital (Financial solutions provider company)
   - Position: Data Scientist
-  - [Task: credit risk assessment](https://github.com/yurywallet/test_assignments/tree/main/ipf_credit_scoring)
+  - [Task: Credit risk assessment](https://github.com/yurywallet/test_assignments/tree/main/ipf_credit_scoring)
 - Kühne Nagel (Global transport and logistics company)
   - Position: Machine Learning Engineer
   - [Task: Build a text classification service](https://github.com/yurywallet/test_assignments/tree/main/KuhneNagel_2019)
