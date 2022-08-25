@@ -19,7 +19,7 @@ A collections of results for homework assigments
 - Brainbase (Brand licensing management software company) 
   - Position: ML Engineer
   - [Task: Automate PDF contracts analysis](https://github.com/yurywallet/test_assignments/tree/main/brainbase)
-- Wise (former TransferWise,  Financial technology company)
+- Wise (Financial technology company, former TransferWise)
   - Position: Product Analyst
   - [Task: assess customer risk, network analysis](https://github.com/yurywallet/test_assignments/tree/main/2020_wise_transferwise)
 - Bolt (Leading European urban on-demand transportation and food delivery platform)
